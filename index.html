@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded cBoT</title>
+    <title>Passcode Protected Page</title>
+    <script>
+        function checkPasscode() {
+            var passcode = prompt("Please enter the passcode:");
+            if (passcode === "011235") {
+                document.getElementById("protectedContent").style.display = "block";
+            } else {
+                alert("Incorrect passcode. Access denied.");
+                document.body.innerHTML = "<h1>Access Denied</h1>";
+            }
+        }
+    </script>
 </head>
-<body>
-    <iframe src="https://cbot-11160.chipp.ai" height="800px" width="100%" frameborder="0" title="cBoT"></iframe>
+<body onload="checkPasscode()">
+    <div id="protectedContent" style="display:none;">
+        <iframe src="https://cbot-11160.chipp.ai" height="800px" width="100%" frameborder="0" title="cBoT"></iframe>
+    </div>
 </body>
 </html>
