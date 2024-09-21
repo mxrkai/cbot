@@ -1,0 +1,47 @@
+version: 1.1.6
+
+cache: true
+
+registration:
+  socialLogins: ["discord", "facebook", "github", "google", "openid"]
+
+endpoints:
+  # groq
+  # Model list: https://console.groq.com/settings/limits
+  - name: "groq"
+    apiKey: "${GROQ_API_KEY}"
+    baseURL: "https://api.groq.com/openai/v1/"
+    models:
+      default: [
+        "llama-3.1-405b-reasoning",
+        "llama-3.1-70b-versatile",
+        "llama-3.1-8b-instant",
+        "llama3-groq-70b-8192-tool-use-preview",
+        "llama3-groq-8b-8192-tool-use-preview",
+        "llama3-70b-8192",
+        "llama3-8b-8192",
+        "mixtral-8x7b-32768",
+        "gemma-7b-it",
+        "gemma2-9b-it"
+        ]
+      fetch: false
+    titleConvo: true
+    titleModel: "mixtral-8x7b-32768"
+    modelDisplayLabel: "groq"
+
+  # New Mxrk endpoint
+  - name: "Mxrk"
+    apiKey: "${MXRK_API_KEY}"
+    baseURL: "https://markn.zeabur.app/v1"
+    models:
+      default: [
+        "gpt-4o-mini",
+        "gpt-4o",
+        "gemma2-9b-chat",
+        "llama3-groq-70b-8192-tool-use-preview",
+        "mixtral-8x7b-32768"
+        ]
+      fetch: false
+    titleConvo: true
+    titleModel: "mixtral-8x7b-32768"
+    modelDisplayLabel: "mxrk"
