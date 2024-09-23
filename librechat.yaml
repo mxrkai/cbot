@@ -81,7 +81,7 @@ endpoints:
 # myAI
     # Model list: https://unify.ai/chat
     - name: "myAI"
-      apiKey: "${UNIFY_API_KEY}"
+      apiKey: "${MYAI_API_KEY}"
       baseURL: "https://markn.zeabur.app/v1/"
       models:
         default: [
